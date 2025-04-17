@@ -49,7 +49,7 @@ public class GeneralQuestions extends Activity {
         }
 
         // Initialize buttons
-        buttonBack = (Button) findViewById(R.id.button_back);
+        buttonBack = (Button) findViewById(R.id.back_button);
         buttonAdvisement = (Button) findViewById(R.id.advisement_info_button);
         buttonLearningOptions = (Button) findViewById(R.id.learning_options_button);
         buttonScholarships = (Button) findViewById(R.id.scholarships_button);

@@ -32,10 +32,12 @@ public class MainActivity extends Activity {
         // Set up button listeners
         setupButtonListeners();
         deliverWelcomeMessage();
+
+        Log.d("Robot", "Sending speech signal to server...");
         SpeechTriggerManager.triggerSTTAndPoll(
                 myRobot,
-                "http://192.168.1.200:8080/startSTT", //replace with actual server address
-                "http://192.168.1.200:5000/sttResult", //replace with server polling address
+                "http://192.168.1.218:8080/startSTT", //replace with actual server address
+                "http://192.168.1.218:8080/sttResult", //replace with server polling address
                 new SpeechTriggerManager.SpeechResultListener() {
                     @Override
                     public void onResultReceived(final String recognizedText) {
@@ -44,7 +46,7 @@ public class MainActivity extends Activity {
                             public void run() {
                                 if (recognizedText.equalsIgnoreCase("General Questions")) {
                                     openActivity(GeneralQuestions.class);
-                                } else if (recognizedText.equalsIgnoreCase("STEM Programs")) {
+                                } else if (recognizedText.equalsIgnoreCase("Programs")) {
                                     openActivity(StemPrograms.class);
                                 } else {
                                     Log.d("Robot", "Unrecognized speech: " + recognizedText);
