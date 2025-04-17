@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/sculpture_park"
+    android:gravity="center">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="start"
+        android:padding="8dp">
+
+        <Button
+            android:id="@+id/back_button"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:text="Back"
+            android:textColor="#FFFFFF"
+            android:backgroundTint="#6200EE"
+            android:padding="30dp"
+            android:elevation="4dp" />
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="General Questions"
+        android:textSize="40sp"
+        android:textStyle="bold"
+        android:layout_gravity="center"
+        android:textColor="#ffffff" />
+
+    <GridLayout
+        android:id="@+id/grid_buttons"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:rowCount="2"
+        android:columnCount="2"
+        android:layout_margin="16dp"
+        android:gravity="center">
+
+        <Button
+            android:id="@+id/advisement_info_button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="1"
+            android:layout_gravity="fill"
+            android:layout_margin="12dp"
+            android:textSize="30dp"
+            android:minWidth="200dp"
+            android:minHeight="200dp"
+            android:text="Advisement Information"
+            android:textColor="#FFFFFF"
+            android:backgroundTint="#6200EE"
+            android:padding="20dp"
+            android:elevation="4dp" />
+
+        <Button
+            android:id="@+id/learning_options_button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="1"
+            android:layout_gravity="fill"
+            android:layout_margin="12dp"
+            android:textSize="30dp"
+            android:minWidth="200dp"
+            android:minHeight="200dp"
+            android:text="Learning Options"
+            android:textColor="#FFFFFF"
+            android:backgroundTint="#6200EE"
+            android:padding="20dp"
+            android:elevation="4dp" />
+
+        <Button
+            android:id="@+id/scholarships_button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="1"
+            android:layout_gravity="fill"
+            android:layout_margin="12dp"
+            android:textSize="30dp"
+            android:minWidth="200dp"
+            android:minHeight="200dp"
+            android:text="Scholarships"
+            android:textColor="#FFFFFF"
+            android:backgroundTint="#6200EE"
+            android:padding="20dp"
+            android:elevation="4dp" />
+
+        <Button
+            android:id="@+id/financial_aid_button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="1"
+            android:layout_gravity="fill"
+            android:layout_margin="12dp"
+            android:textSize="30dp"
+            android:minWidth="200dp"
+            android:minHeight="200dp"
+            android:text="Financial Aid"
+            android:textColor="#FFFFFF"
+            android:backgroundTint="#6200EE"
+            android:padding="20dp"
+            android:elevation="4dp" />
+    </GridLayout>
+</LinearLayout>

@@ -1,0 +1,40 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.avatarmind.enteckiosk">
+
+    <!-- Permissions for robot motion (existing permission) -->
+    <uses-permission android:name="com.avatar.permission.ROBOT_MOTION" />
+
+    <!-- Permissions for Speech-to-Text, Text-to-Speech, and Voice Recognition -->
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+
+    <!-- Allows accessing the internet (required for online speech recognition and TTS) -->
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <!-- Optional: Wake lock permission to prevent the device from sleeping during speech operations -->
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen"
+        tools:ignore="GoogleAppIndexingWarning">
+
+        <service android:name="android.robot.speech.SpeechService"
+            android:exported="false"/>
+
+
+        <!-- Main Activity -->
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".StemPrograms" />
+        <activity android:name=".GeneralQuestions" />
+    </application>
+
+</manifest>

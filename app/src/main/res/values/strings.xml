@@ -1,0 +1,29 @@
+<resources>
+    <string name="app_name">EntecKiosk</string>
+    <string name="main_message">Hello, and welcome to Miami Dade College North Campus! Feel free to press an option or speak it to see more information.</string>
+    <string name="general_questions_intro">These are some of the general questions that a student may want to know before coming to Miami Dade College, select a topic to learn more!</string>
+    <string name="stem_message">"These are the Bachelor Programs that the School of Engineering and Technology offers." +
+                "From Artificial Intelligence, Networking, to Electrical Engineering, and many others, Miami Dade College offers a variety of STEM programs for students interesting in developing skills for a career in technology." +
+                "Select a program for more information."</string>
+    <string name="advisement_info_message">
+    At Miami Dade College, advisors are here to help you navigate your academic journey.
+    They provide assistance with course planning, career guidance, transfer options, and personal development.
+    You can visit the Advisement and Career Services department in person or online for personalized support.
+    </string>
+    <string name="learning_options_message">Miami Dade College offers flexible learning options to fit your needs. "
+                + "You can choose in-person classes, blended formats combining online and traditional instruction, "
+                + "MDC Live for real-time virtual learning, or fully online courses for flexibility. "
+                + "Explore these options to find the learning style that works best for you.
+    </string>
+    <string name="scholarships_message">Miami Dade College offers a variety of scholarships "
+                + "to support students in technology programs. These include the Javier Coto Scholarship, City of Miami Residents Scholarship, "
+                + "and the FPL Tech Scholarship. Explore these options to help fund your academic journey in engineering and technology. "
+                + "For more details, contact the EnTec department or visit the scholarships webpage.
+    </string>
+    <string name="financial_aid_message">Miami Dade College is dedicated to making higher education affordable and accessible for everyone. "
+                + "Through a variety of financial aid options, including grants, scholarships, loans, and work-study programs, "
+                + "students can pursue their education without financial barriers. "
+                + "MDC is committed to supporting your journey with resources and guidance to help you achieve your academic goals. "
+                + "Read the screen to learn more about the financial aid opportunities available at Miami Dade College.
+    </string>
+</resources>

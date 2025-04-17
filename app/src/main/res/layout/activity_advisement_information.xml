@@ -1,0 +1,101 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:background="@drawable/sculpture_park">
+
+    <TextView
+        android:id="@+id/text_view_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Advisement Information"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
+        android:textColor="#FFFFFF" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:background="#ffffff"
+        android:layout_height="match_parent"
+        android:layout_below="@id/text_view_title"
+        android:layout_above="@id/advisement_back_button"
+        android:layout_marginTop="16dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="8dp">
+
+            <TextView
+                android:id="@+id/advisement_info_text_1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Advisement services are available to help you navigate your academic journey. Contact an advisor to discuss your educational goals, course planning, and academic success."
+                android:textSize="26sp"
+                android:textColor="#000000"
+                android:layout_marginBottom="16dp" />
+
+            <TextView
+                android:id="@+id/advisement_info_text_2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Available Services:"
+                android:textSize="23sp"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:textColor="#000000"
+                android:layout_marginBottom="8dp" />
+
+            <TextView
+                android:id="@+id/advisement_info_text_3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text=" Academic advising\n Career planning\n Course selection\n Transfer assistance\n Personal development guidance"
+                android:textSize="20sp"
+                android:textColor="#000000"
+                android:layout_marginBottom="16dp" />
+
+            <TextView
+                android:id="@+id/advisement_info_text_4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Visit the campus Advisement and Career Services department for personalized support. Advisement is available both in-person and virtually."
+                android:textSize="26sp"
+                android:gravity="center"
+                android:textColor="#000000"
+                android:layout_marginBottom="16dp" />
+
+            <TextView
+                android:id="@+id/advisement_info_text_5"
+                android:layout_width="match_parent"
+                android:gravity="center"
+
+                android:layout_height="wrap_content"
+                android:text="Contact Information:\nPhone: 305-237-8888\nWebsite: www.mdc.edu/advisement/"
+                android:textSize="25sp"
+                android:textColor="#000000"
+                android:layout_marginBottom="16dp" />
+            <ImageView
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:layout_gravity="center"
+                android:src="@drawable/advqr"/>
+        </LinearLayout>
+    </ScrollView>
+
+    <Button
+        android:id="@+id/advisement_back_button"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:text="Back"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:backgroundTint="#6200EE"
+        android:textColor="#FFFFFF"
+        android:padding="16dp"
+        android:elevation="4dp" />
+</RelativeLayout>
