@@ -1,6 +1,139 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:background="@drawable/img_networking">
 
-</LinearLayout>
+    <TextView
+        android:id="@+id/text_networking_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Information Systems Technology - Networking"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
+        android:textColor="#000000"
+        android:background="#ffffff"/>
+
+    <ScrollView
+        android:id="@+id/scroll_networking_content"
+        android:background="#ffffff"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/text_networking_title"
+        android:layout_above="@id/button_back_networking"
+        android:layout_marginTop="16dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="8dp">
+
+            <TextView
+                android:id="@+id/text_networking_description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="left"
+                android:text="The Bachelor of Science in Information Systems Technology with a Networking Concentration at Miami Dade College provides students with critical skills in network design, planning, implementation, and management. The curriculum covers network security, information storage management, systems administration, wireless networks, and IT project management."
+                android:textSize="20sp"
+                android:layout_marginBottom="16dp"
+                android:textColor="#000000" />
+
+            <TextView
+                android:id="@+id/text_networking_additional"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Graduates are prepared for roles such as Network Administrators, Systems Analysts, and Computer Network Architects. The program emphasizes hands-on experience and prepares students for industry certifications like Cisco Certified Networking Associate (CCNA) and CompTIA Network+."
+                android:textSize="20sp"
+                android:textColor="#000000"
+                android:layout_marginBottom="16dp" />
+
+            <TextView
+                android:id="@+id/text_networking_classes_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Major Classes You May Take"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="#000000"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="8dp" />
+
+            <TextView
+                android:id="@+id/text_networking_class_1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="• Network Security\nPrinciples and practices to protect network infrastructure."
+                android:textSize="20sp"
+                android:textColor="#000000"
+                android:layout_marginBottom="8dp" />
+
+            <TextView
+                android:id="@+id/text_networking_class_2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="• Wireless and Mobile Networking\nDesign and implementation of wireless networks."
+                android:textSize="20sp"
+                android:textColor="#000000"
+                android:layout_marginBottom="8dp" />
+
+            <TextView
+                android:id="@+id/text_networking_class_3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="• System Administration and Maintenance\nManaging and maintaining network systems."
+                android:textSize="20sp"
+                android:textColor="#000000"
+                android:layout_marginBottom="8dp" />
+
+            <TextView
+                android:id="@+id/text_networking_class_4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="• IT Project Management\nPlanning and executing IT projects."
+                android:textSize="20sp"
+                android:textColor="#000000"
+                android:layout_marginBottom="8dp" />
+
+            <TextView
+                android:id="@+id/text_networking_class_5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="• Network Design and Planning\nStrategies for effective network design."
+                android:textSize="20sp"
+                android:textColor="#000000"
+                android:layout_marginBottom="16dp" />
+
+            <TextView
+                android:id="@+id/more_info_networking"
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="For more information about this program, please visit our website at: \nwww.mdc.edu/informationsystemsnetworking/"
+                android:textSize="20sp"
+                android:textColor="#000000"
+                android:layout_marginBottom="16dp" />
+            <ImageView
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:layout_gravity="center"
+                android:src="@drawable/netqr"/>
+        </LinearLayout>
+    </ScrollView>
+
+    <Button
+        android:id="@+id/button_back_networking"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:text="Back"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:backgroundTint="#6200EE"
+        android:textColor="#FFFFFF"
+        android:padding="16dp"
+        android:elevation="4dp" />
+</RelativeLayout>

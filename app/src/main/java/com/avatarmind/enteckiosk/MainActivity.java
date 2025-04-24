@@ -1,25 +1,20 @@
 package com.avatarmind.enteckiosk;
 
-import android.app.Activity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.content.Intent;
 import android.widget.Button;
 
-public class MainActivity extends Activity {
+public class MainActivity extends SpeechListeningActivity {
 
-    private static MainActivity instance;
     private Robot myRobot;
     private Button generalQuestionsButton;
     private Button stemProgramsButton;
     private Button exitButton;
-    private SpeechRecognizerHelper speechHelper;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        instance = this;
         setContentView(R.layout.activity_main);
 
         myRobot = Robot.getInstance(this);
@@ -33,41 +28,20 @@ public class MainActivity extends Activity {
         setupButtonListeners();
         deliverWelcomeMessage();
 
+        // Needed to give time for SpeechManager to properly show up as being used. If removed, speechtriggermanager
+        // thread will activate because robot.isSpeaking() hasn't had time to register as being true
+        // should be in a handler for final version
+        try {
+            Thread.sleep(250);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
         Log.d("Robot", "Sending speech signal to server...");
-        SpeechTriggerManager.triggerSTTAndPoll(
-                myRobot,
-                "http://192.168.1.218:8080/startSTT", //replace with actual server address
-                "http://192.168.1.218:8080/sttResult", //replace with server polling address
-                new SpeechTriggerManager.SpeechResultListener() {
-                    @Override
-                    public void onResultReceived(final String recognizedText) {
-                        runOnUiThread(new Runnable() {
-                            @Override
-                            public void run() {
-                                if (recognizedText.equalsIgnoreCase("General Questions")) {
-                                    openActivity(GeneralQuestions.class);
-                                } else if (recognizedText.equalsIgnoreCase("Programs")) {
-                                    openActivity(StemPrograms.class);
-                                } else {
-                                    Log.d("Robot", "Unrecognized speech: " + recognizedText);
-                                }
-                            }
-                        });
-                    }
-
-                    @Override
-                    public void onError(final Exception e) {
-                        runOnUiThread(new Runnable() {
-                            @Override
-                            public void run() {
-                                Log.e("SpeechTrigger", "Error: ", e);
-                            }
-                        });
-                    }
-                }
+        startSpeechListening(
+                "http://192.168.0.115:8080/startSTT", // Replace with servers actual ip
+                "http://192.168.0.115:8080/sttResult" // Same here
         );
-
-
     }
 
     private void setupButtonListeners() {
@@ -108,12 +82,14 @@ public class MainActivity extends Activity {
         }
     }
 
-    public static void openActivity(Class<?> targetActivity) {
-        if (instance != null) {
-            Intent intent = new Intent(instance, targetActivity);
-            instance.startActivity(intent);
+    @Override
+    protected void handleRecognizedText(String recognizedText) {
+        if (recognizedText.equalsIgnoreCase("General Questions")) {
+            openActivity(GeneralQuestions.class);
+        } else if (recognizedText.equalsIgnoreCase("Programs")) {
+            openActivity(StemPrograms.class);
         } else {
-            Log.e("MainActivity", "Instance is null, cannot open activity.");
+            Log.d("MainActivity", "Unrecognized speech: " + recognizedText);
         }
     }
 
@@ -123,8 +99,28 @@ public class MainActivity extends Activity {
         if (myRobot != null) {
             myRobot.stopSpeaking();
         }
-        if (speechHelper != null) {
-            speechHelper.destroy();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+
+        String rePropmt = "Please select or speak an option";
+        if (myRobot != null) {
+            myRobot.speak(rePropmt);
+        } else {
+            Log.e("MainActivity", "Robot instance is null, cannot deliver welcome message.");
         }
+
+        try {
+            Thread.sleep(250);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+        startSpeechListening(
+                "http://192.168.0.115:8080/startSTT", // Replace with servers actual ip
+                "http://192.168.0.115:8080/sttResult" // Same here
+        );
     }
 }

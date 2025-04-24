@@ -1,6 +1,118 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:background="@drawable/sculpture_park">
 
-</LinearLayout>
+    <TextView
+        android:id="@+id/text_view_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="EnTec Scholarships"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
+        android:textColor="#FFFFFF" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/text_view_title"
+        android:layout_above="@id/scholarship_back_button"
+        android:layout_marginTop="16dp"
+        android:background="#FFFFFF">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="8dp">
+
+            <TextView
+                android:id="@+id/scholarship_javier_coto_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Javier Coto Scholarship"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="#000000"
+                android:layout_marginBottom="8dp" />
+
+            <TextView
+                android:id="@+id/scholarship_javier_coto_description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Offered to students enrolling in select tech courses every semester. Sponsored by Miami-Dade County and Apple, it supports the development of local talent in Artificial Intelligence and App Development."
+                android:textSize="20sp"
+                android:textColor="#000000"
+                android:layout_marginBottom="16dp" />
+
+            <TextView
+                android:id="@+id/scholarship_city_miami_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="City of Miami Residents Scholarship"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="#000000"
+                android:layout_marginBottom="8dp" />
+
+            <TextView
+                android:id="@+id/scholarship_city_miami_description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="In partnership with the City of Miami, this scholarship offers residents the opportunity to enroll in emerging technology programs, leading to high-demand jobs within the Miami tech industry."
+                android:textSize="20sp"
+                android:textColor="#000000"
+                android:layout_marginBottom="16dp" />
+
+            <TextView
+                android:id="@+id/scholarship_fpl_tech_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="FPL Tech Scholarship"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="#000000"
+                android:layout_marginBottom="8dp" />
+
+            <TextView
+                android:id="@+id/scholarship_fpl_tech_description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="A partnership between MDC and Florida Power and Light Company to provide scholarships for historically underrepresented minority students pursuing baccalaureate degrees in technology fields."
+                android:textSize="20sp"
+                android:textColor="#000000"
+                android:layout_marginBottom="16dp" />
+
+            <TextView
+                android:id="@+id/more_info_scholarships"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="For more information about EnTec Scholarships, please contact:\nPhone: 305-237-9300\nEmail: entech@mdc.edu\nWebsite: www.mdc.edu/entec/scholarships/"
+                android:textSize="20sp"
+                android:textColor="#000000"
+                android:layout_marginTop="24dp"
+                android:layout_marginBottom="16dp" />
+            <ImageView
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:layout_gravity="center"
+                android:src="@drawable/etschqr"/>
+        </LinearLayout>
+    </ScrollView>
+
+    <Button
+        android:id="@+id/scholarship_back_button"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:text="Back"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:backgroundTint="#6200EE"
+        android:textColor="#FFFFFF"
+        android:padding="16dp"
+        android:elevation="4dp" />
+</RelativeLayout>

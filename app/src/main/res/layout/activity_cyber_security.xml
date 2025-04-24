@@ -1,6 +1,142 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:background="@drawable/img_cybersecurity">
 
-</LinearLayout>
+    <TextView
+        android:id="@+id/text_cybersecurity_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Cybersecurity"
+        android:textSize="24sp"
+        android:background="#ffffff"
+        android:textStyle="bold"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
+        android:textColor="#000000" />
+
+    <ScrollView
+        android:id="@+id/scroll_cybersecurity_content"
+        android:background="#ffffff"
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/text_cybersecurity_title"
+        android:layout_above="@id/button_back_cybersecurity"
+        android:layout_marginTop="16dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="8dp">
+
+            <TextView
+                android:id="@+id/text_cybersecurity_description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="left"
+                android:text="Miami Dade College offers a Bachelor of Science in Cybersecurity. The program provides hands-on training in ethical hacking, information security management, network defense, penetration testing, and computer forensics. Recognized by the National Security Agency as a Center of Academic Excellence in Cyber Defense, graduates are prepared for roles such as Security System Administrators and Information Security Analysts."
+                android:textSize="20sp"
+                android:layout_marginBottom="16dp"
+                android:textColor="#000000" />
+
+            <TextView
+                android:id="@+id/text_cybersecurity_additional"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="The program emphasizes practical application through real-world scenarios at MDC's Cybersecurity Center of the Americas. Graduates can pursue certifications like Certified Ethical Hacker, Certified Information Security Manager, and Computer Hacking Forensics Investigator."
+                android:textSize="20sp"
+                android:textColor="#000000"
+                android:layout_marginBottom="16dp" />
+
+            <!-- Classes List Title -->
+            <TextView
+                android:id="@+id/text_cybersecurity_classes_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Major Classes You May Take"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="#000000"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="8dp" />
+
+            <!-- List of Classes -->
+            <TextView
+                android:id="@+id/text_cybersecurity_class_1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="• CIS 3215: Ethics in Cybersecurity\nExploration of ethical issues and professional responsibilities in the field of cybersecurity."
+                android:textSize="20sp"
+                android:textColor="#000000"
+                android:layout_marginBottom="8dp" />
+
+            <TextView
+                android:id="@+id/text_cybersecurity_class_2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="• CIS 3360: Principles in Information Security\nIntroduction to fundamental concepts and practices in information security."
+                android:textSize="20sp"
+                android:textColor="#000000"
+                android:layout_marginBottom="8dp" />
+
+            <TextView
+                android:id="@+id/text_cybersecurity_class_3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="• CIS 4204: Ethical Hacking 1\nTechniques and tools used in ethical hacking and penetration testing."
+                android:textSize="20sp"
+                android:textColor="#000000"
+                android:layout_marginBottom="8dp" />
+
+            <TextView
+                android:id="@+id/text_cybersecurity_class_4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="• CIS 4366: Computer Forensics\nMethods for collecting, analyzing, and preserving digital evidence."
+                android:textSize="20sp"
+                android:textColor="#000000"
+                android:layout_marginBottom="8dp" />
+
+            <TextView
+                android:id="@+id/text_cybersecurity_class_5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="• CIS 4378: Ethical Hacking 2\nAdvanced topics in ethical hacking, building upon concepts from Ethical Hacking 1."
+                android:textSize="20sp"
+                android:textColor="#000000"
+                android:layout_marginBottom="16dp" />
+
+            <TextView
+                android:id="@+id/more_info"
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="For more information about this program, please visit our website at: \nwww.mdc.edu/cybersecuritybs/"
+                android:textSize="20sp"
+                android:textColor="#000000"
+                android:layout_marginBottom="16dp" />
+            <ImageView
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:layout_gravity="center"
+                android:src="@drawable/cysqr"/>
+        </LinearLayout>
+    </ScrollView>
+
+    <Button
+        android:id="@+id/button_back_cybersecurity"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:text="Back"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:backgroundTint="#6200EE"
+        android:textColor="#FFFFFF"
+        android:padding="16dp"
+        android:elevation="4dp" />
+</RelativeLayout>

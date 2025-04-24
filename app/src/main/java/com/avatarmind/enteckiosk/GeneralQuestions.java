@@ -1,6 +1,5 @@
 package com.avatarmind.enteckiosk;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.robot.motion.RobotMotion;
@@ -8,10 +7,9 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
-public class GeneralQuestions extends Activity {
+public class GeneralQuestions extends SpeechListeningActivity {
     private Robot myRobot;
     private RobotMotion rMotion;
-    private SpeechRecognizerHelper speechHelper;
     private Button buttonBack;
     private Button buttonAdvisement;
     private Button buttonLearningOptions;
@@ -26,8 +24,16 @@ public class GeneralQuestions extends Activity {
 
         //get shared robot instance
         myRobot = Robot.getInstance(this);
-
         rMotion = new RobotMotion();
+
+        // Initialize buttons
+        buttonBack = (Button) findViewById(R.id.back_button);
+        buttonAdvisement = (Button) findViewById(R.id.advisement_info_button);
+        buttonLearningOptions = (Button) findViewById(R.id.learning_options_button);
+        buttonScholarships = (Button) findViewById(R.id.scholarships_button);
+        buttonFinancialAid = (Button) findViewById(R.id.financial_aid_button);
+
+        setupButtonListeners();
 
         try {
 
@@ -48,16 +54,17 @@ public class GeneralQuestions extends Activity {
             Log.e("general_questions", "Error during initial actions: " + e.getMessage());
         }
 
-        // Initialize buttons
-        buttonBack = (Button) findViewById(R.id.back_button);
-        buttonAdvisement = (Button) findViewById(R.id.advisement_info_button);
-        buttonLearningOptions = (Button) findViewById(R.id.learning_options_button);
-        buttonScholarships = (Button) findViewById(R.id.scholarships_button);
-        buttonFinancialAid = (Button) findViewById(R.id.financial_aid_button);
+        try {
+            Thread.sleep(250);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
 
-        setupButtonListeners();
-
-
+        Log.d("Robot", "Sending speech signal to server...");
+        startSpeechListening(
+                "http://192.168.0.115:8080/startSTT", // Replace with servers actual ip
+                "http://192.168.0.115:8080/sttResult" // Same here
+        );
     }
     // Set up listeners
     private void setupButtonListeners() {
@@ -73,8 +80,8 @@ public class GeneralQuestions extends Activity {
             @Override
             public void onClick(View v) {
                 myRobot.stopSpeaking();
-                // Intent intent = new Intent(GeneralQuestions.this, AdvisementInformation.class);
-                // startActivity(intent);
+                Intent intent = new Intent(GeneralQuestions.this, AdvisementInformation.class);
+                startActivity(intent);
             }
         });
 
@@ -82,8 +89,8 @@ public class GeneralQuestions extends Activity {
             @Override
             public void onClick(View v) {
                 myRobot.stopSpeaking();
-                // Intent intent = new Intent(GeneralQuestions.this, LearningOptions.class);
-                // startActivity(intent);
+                Intent intent = new Intent(GeneralQuestions.this, LearningOptions.class);
+                startActivity(intent);
             }
         });
 
@@ -91,8 +98,8 @@ public class GeneralQuestions extends Activity {
             @Override
             public void onClick(View v) {
                 myRobot.stopSpeaking();
-                // Intent intent = new Intent(GeneralQuestions.this, ScholarshipsActivity.class);
-                // startActivity(intent);
+                Intent intent = new Intent(GeneralQuestions.this, Scholarships.class);
+                startActivity(intent);
             }
         });
 
@@ -100,16 +107,27 @@ public class GeneralQuestions extends Activity {
             @Override
             public void onClick(View v) {
                 myRobot.stopSpeaking();
-                // Intent intent = new Intent(GeneralQuestions.this, AdvisementInformation.class);
-                // startActivity(intent);
+                Intent intent = new Intent(GeneralQuestions.this, FinancialAid.class);
+                startActivity(intent);
             }
         });
     }
 
-    //
-    private void startNewActivity(Class<?> targetActivity) {
-        Intent intent = new Intent(GeneralQuestions.this, targetActivity);
-        startActivity(intent);
+    @Override
+    protected void handleRecognizedText(String recognizedText) {
+        if (recognizedText.equalsIgnoreCase("Advisement Information")) {
+            openActivity(AdvisementInformation.class);
+        } else if (recognizedText.equalsIgnoreCase("Learning Options")) {
+            openActivity(LearningOptions.class);
+        } else if (recognizedText.equalsIgnoreCase("Scholarships")) {
+            openActivity(Scholarships.class);
+        } else if (recognizedText.equalsIgnoreCase("Financial Aid")) {
+            openActivity(FinancialAid.class);
+        } else if (recognizedText.equalsIgnoreCase("Back")) {
+            finish();
+        } else {
+            Log.d("GeneralQuestions", "Unrecognized speech: " + recognizedText);
+        }
     }
 
     @Override
@@ -118,9 +136,6 @@ public class GeneralQuestions extends Activity {
         super.onDestroy();
         if (myRobot != null) {
             myRobot.stopSpeaking();
-        }
-        if (speechHelper != null) {
-            speechHelper.destroy();
         }
     }
 }

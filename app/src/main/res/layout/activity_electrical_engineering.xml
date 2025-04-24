@@ -1,6 +1,140 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:background="@drawable/img_electrical_engineering">
 
-</LinearLayout>
+    <TextView
+        android:id="@+id/text_ecet_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Electrical and Computer Engineering Technology"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
+        android:textColor="#000000"
+        android:background="#ffffff" />
+
+
+    <ScrollView
+        android:id="@+id/scroll_ecet_content"
+        android:background="#ffffff"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/text_ecet_title"
+        android:layout_above="@id/button_back_ecet"
+        android:layout_marginTop="16dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="8dp">
+
+            <TextView
+                android:id="@+id/text_ecet_description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="left"
+                android:text="Miami Dade College offers a Bachelor of Science in Electrical and Computer Engineering Technology (BS-ECET), providing practical, hands-on experience in engineering-related project management, teamwork, and technical writing. The program facilitates seamless credit transfer for students with an Associate in Science in Electronics Engineering Technology or Computer Engineering Technology."
+                android:textSize="20sp"
+                android:layout_marginBottom="16dp"
+                android:textColor="#000000" />
+
+            <TextView
+                android:id="@+id/text_ecet_additional"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="The BS-ECET program requires the completion of 134 credits, including 48 major core requirement credits from courses such as Advanced Microprocessors, Signals and Systems, Analog and Digital Communication, Feedback Control Systems, Technical Economic Analysis, and Applied Robotics. Graduates are prepared for careers as Engineering Technologists, Project Managers, Field Engineering Technicians, Electrical Engineering Technicians, and Electronics Engineering Technicians. The program is available at North Campus, Kendall Campus, and Wolfson Campus."
+                android:textSize="20sp"
+                android:textColor="#000000"
+                android:layout_marginBottom="16dp" />
+
+            <TextView
+                android:id="@+id/text_ecet_classes_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Major Classes You May Take"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="#000000"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="8dp" />
+
+            <TextView
+                android:id="@+id/text_ecet_class_1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="• Advanced Microprocessors\nIn-depth study of microprocessor architecture and programming."
+                android:textSize="20sp"
+                android:textColor="#000000"
+                android:layout_marginBottom="8dp" />
+
+            <TextView
+                android:id="@+id/text_ecet_class_2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="• Signals and Systems\nAnalysis of continuous and discrete-time signals and systems."
+                android:textSize="20sp"
+                android:textColor="#000000"
+                android:layout_marginBottom="8dp" />
+
+            <TextView
+                android:id="@+id/text_ecet_class_3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="• Analog and Digital Communication\nPrinciples of transmitting information using analog and digital methods."
+                android:textSize="20sp"
+                android:textColor="#000000"
+                android:layout_marginBottom="8dp" />
+
+            <TextView
+                android:id="@+id/text_ecet_class_4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="• Feedback Control Systems\nDesign and analysis of control systems with feedback mechanisms."
+                android:textSize="20sp"
+                android:textColor="#000000"
+                android:layout_marginBottom="8dp" />
+
+            <TextView
+                android:id="@+id/text_ecet_class_5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="• Applied Robotics\nPractical applications and integration of robotic systems."
+                android:textSize="20sp"
+                android:textColor="#000000"
+                android:layout_marginBottom="16dp" />
+
+            <TextView
+                android:id="@+id/more_info_ecet"
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="For more information about this program, please visit our website at: \nwww.mdc.edu/electronicsengineeringbs/"
+                android:textSize="20sp"
+                android:textColor="#000000"
+                android:layout_marginBottom="16dp" />
+            <ImageView
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:layout_gravity="center"
+                android:src="@drawable/eeqr"/>
+        </LinearLayout>
+    </ScrollView>
+
+    <Button
+        android:id="@+id/button_back_ecet"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:text="Back"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:backgroundTint="#6200EE"
+        android:textColor="#FFFFFF"
+        android:padding="16dp"
+        android:elevation="4dp" />
+</RelativeLayout>

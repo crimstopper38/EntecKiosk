@@ -26,4 +26,20 @@
                 + "MDC is committed to supporting your journey with resources and guidance to help you achieve your academic goals. "
                 + "Read the screen to learn more about the financial aid opportunities available at Miami Dade College.
     </string>
+    <string name="ai_intro_message">"Miami Dade College offers a Bachelor of Science in Applied Artificial Intelligence. "
+                    + "This program provides practical skills in machine learning, natural language processing, "
+                    + "and computer vision. It emphasizes ethical and socially responsible practices. "
+                    + "Graduates are prepared for roles such as AI Analysts and Machine Learning Specialists. "
+                    + "For more information, please visit double u double u double u dot m d c dot e d u slash applied a i b s.
+    </string>
+    <string name="software_engineering_intro_message">The Bachelor of Science in Information Systems Technology with a Software Engineering Concentration at Miami Dade College provides students with critical skills in software design, programming, data structures, and systems analysis. The curriculum covers software engineering principles, computer architecture, data structures, and algorithms.
+    </string>
+    <string name="data_analytics_intro_message">Miami Dade College offers a Bachelor of Science in Data Analytics. The program provides students with the skills to interpret and present large datasets essential for organizational success. Hands-on training emphasizes data manipulation and analysis across various industries.
+    </string>
+    <string name="cyber_security_intro_message">Miami Dade College offers a Bachelor of Science in Cybersecurity. The program provides hands-on training in ethical hacking, information security management, network defense, penetration testing, and computer forensics. Recognized by the National Security Agency as a Center of Academic Excellence in Cyber Defense, graduates are prepared for roles such as Security System Administrators and Information Security Analysts.
+    </string>
+    <string name="networking_intro_message">The Bachelor of Science in Information Systems Technology with a Networking Concentration at Miami Dade College provides students with critical skills in network design, planning, implementation, and management. The curriculum covers network security, information storage management, systems administration, wireless networks, and IT project management.
+    </string>
+    <string name="electrical_engineering_intro_message">Miami Dade College offers a Bachelor of Science in Electrical and Computer Engineering Technology (BS-ECET), providing practical, hands-on experience in engineering-related project management, teamwork, and technical writing. The program facilitates seamless credit transfer for students with an Associate in Science in Electronics Engineering Technology or Computer Engineering Technology.
+    </string>
 </resources>

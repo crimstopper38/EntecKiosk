@@ -9,9 +9,13 @@
         android:id="@+id/exit_button"
         android:layout_width="200dp"
         android:layout_height="50dp"
-        android:background="#6200EE"
+        android:background="#2196F3"
         android:text="Exit Application"
-        android:textColor="#ffffff"/>
+        android:textSize="25dp"
+        android:textColor="#ffffff"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_margin="8dp" />
 
     <!-- Content Section -->
     <LinearLayout
@@ -41,7 +45,7 @@
             android:text="General Questions"
             android:padding="25dp"
             android:textSize="30dp"
-            android:backgroundTint="#6200EE"
+            android:backgroundTint="#2196F3"
             android:textColor="#FFFFFF"
             android:elevation="4dp"
             android:layout_marginBottom="16dp" />
@@ -53,7 +57,7 @@
             android:text="STEM Bachelor Program Information"
             android:padding="25dp"
             android:textSize="25dp"
-            android:backgroundTint="#6200EE"
+            android:backgroundTint="#2196F3"
             android:textColor="#FFFFFF"
             android:elevation="4dp" />
     </LinearLayout>

@@ -35,6 +35,16 @@
 
         <activity android:name=".StemPrograms" />
         <activity android:name=".GeneralQuestions" />
+        <activity android:name=".Scholarships" />
+        <activity android:name=".FinancialAid" />
+        <activity android:name=".LearningOptions"/>
+        <activity android:name=".AdvisementInformation"/>
+        <activity android:name=".ArtificialIntelligence"/>
+        <activity android:name=".SoftwareEngineering"/>
+        <activity android:name=".CyberSecurity"/>
+        <activity android:name=".DataAnalytics"/>
+        <activity android:name=".Networking"/>
+        <activity android:name=".ElectricalEngineering"/>
     </application>
 
 </manifest>

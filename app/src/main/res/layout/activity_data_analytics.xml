@@ -1,6 +1,140 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:background="@drawable/img_data_analytics">
 
-</LinearLayout>
+    <!-- Program Title -->
+    <TextView
+        android:id="@+id/text_data_analytics_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Data Analytics"
+        android:background="#ffffff"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
+        android:textColor="#000000" />
+
+    <ScrollView
+        android:id="@+id/scroll_data_analytics_content"
+        android:background="#ffffff"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/text_data_analytics_title"
+        android:layout_above="@id/button_back_data_analytics"
+        android:layout_marginTop="16dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="8dp">
+
+            <TextView
+                android:id="@+id/text_data_analytics_description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="left"
+                android:text="Miami Dade College offers a Bachelor of Science in Data Analytics. The program provides students with the skills to interpret and present large datasets essential for organizational success. Hands-on training emphasizes data manipulation and analysis across various industries."
+                android:textSize="20sp"
+                android:layout_marginBottom="16dp"
+                android:textColor="#000000" />
+
+            <TextView
+                android:id="@+id/text_data_analytics_additional"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Graduates are prepared for roles such as Data Analysts and Business Intelligence Professionals. The program includes courses like Python Programming, Database Concepts, and Statistical Methods."
+                android:textSize="20sp"
+                android:textColor="#000000"
+                android:layout_marginBottom="16dp" />
+
+            <TextView
+                android:id="@+id/text_data_analytics_classes_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Major Classes You May Take"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="#000000"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="8dp" />
+
+            <TextView
+                android:id="@+id/text_data_analytics_class_1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="• CAP 1788: Introduction to Data Analytics\nLearn foundational concepts in data analytics and their real-world applications."
+                android:textSize="20sp"
+                android:textColor="#000000"
+                android:layout_marginBottom="8dp" />
+
+            <TextView
+                android:id="@+id/text_data_analytics_class_2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="• CGS 1540C: Database Concepts and Design\nUnderstand the basics of database systems and how to design efficient databases."
+                android:textSize="20sp"
+                android:textColor="#000000"
+                android:layout_marginBottom="8dp" />
+
+            <TextView
+                android:id="@+id/text_data_analytics_class_3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="• CAP 2761C: Intermediate Analytics\nDelve deeper into analytics tools and methods for handling big data."
+                android:textSize="20sp"
+                android:textColor="#000000"
+                android:layout_marginBottom="8dp" />
+
+            <TextView
+                android:id="@+id/text_data_analytics_class_4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="• COP 1047C: Introduction to Python Programming\nLearn the basics of Python programming for data manipulation."
+                android:textSize="20sp"
+                android:textColor="#000000"
+                android:layout_marginBottom="8dp" />
+
+            <TextView
+                android:id="@+id/text_data_analytics_class_5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="• STA 2023: Statistical Methods\nUnderstand statistical techniques for analyzing and interpreting data."
+                android:textSize="20sp"
+                android:textColor="#000000"
+                android:layout_marginBottom="16dp" />
+
+            <TextView
+                android:id="@+id/more_info_data_analytics"
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="For more information about this program, please visit our website at: \nwww.mdc.edu/dataanalytics/"
+                android:textSize="20sp"
+                android:textColor="#000000"
+                android:layout_marginBottom="16dp" />
+            <ImageView
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:layout_gravity="center"
+                android:src="@drawable/daqr"/>
+        </LinearLayout>
+    </ScrollView>
+
+    <Button
+        android:id="@+id/button_back_data_analytics"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:text="Back"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:backgroundTint="#6200EE"
+        android:textColor="#FFFFFF"
+        android:padding="16dp"
+        android:elevation="4dp" />
+</RelativeLayout>

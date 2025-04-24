@@ -39,7 +39,7 @@ public class SpeechTriggerManager {
                     String recognizedText = "";
 
                     while (!sttResultReceived) {
-                        Thread.sleep(3000);
+                        Thread.sleep(500);
                         URL pollUrl = new URL(resultUrl);
                         HttpURLConnection pollConn = (HttpURLConnection) pollUrl.openConnection();
                         pollConn.setRequestMethod("GET");
