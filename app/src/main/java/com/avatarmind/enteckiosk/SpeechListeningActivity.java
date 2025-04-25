@@ -8,6 +8,7 @@ import android.util.Log;
 public abstract class SpeechListeningActivity extends Activity {
 
     protected Robot myRobot;
+    private boolean isFirstResume = true;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -67,6 +68,31 @@ public abstract class SpeechListeningActivity extends Activity {
         Intent intent = new Intent(this, targetActivity);
         startActivity(intent);
     }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+
+        if (isFirstResume) {
+            isFirstResume = false;
+            return;  // skip resume prompt on initial entry
+        }
+
+        //myRobot.speak(getResumePrompt());
+
+        try {
+            Thread.sleep(250);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+        startSpeechListening(Config.START_STT_URL, Config.STT_RESULT_URL);
+    }
+
+    protected String getResumePrompt() {
+        return "Please select or speak an option.";
+    }
+
 
 }
 

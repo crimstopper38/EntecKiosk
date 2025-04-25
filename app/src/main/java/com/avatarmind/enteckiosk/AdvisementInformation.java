@@ -46,8 +46,8 @@ public class AdvisementInformation extends SpeechListeningActivity {
 
         Log.d("Robot", "Sending speech signal to server...");
         startSpeechListening(
-                "http://192.168.0.115:8080/startSTT", // Replace with servers actual ip
-                "http://192.168.0.115:8080/sttResult" // Same here
+                Config.START_STT_URL,
+                Config.STT_RESULT_URL
         );
     }
 

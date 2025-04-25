@@ -31,7 +31,7 @@ public class FinancialAid extends SpeechListeningActivity {
             //speech performed by robot when view is opened
             if (myRobot != null) {
                 //string that holds intro speech
-                String introText = getString(R.string.general_questions_intro);
+                String introText = getString(R.string.financial_aid_message);
                 myRobot.speak(introText);
             }
 
@@ -53,8 +53,8 @@ public class FinancialAid extends SpeechListeningActivity {
 
         Log.d("Robot", "Sending speech signal to server...");
         startSpeechListening(
-                "http://192.168.0.115:8080/startSTT", // Replace with servers actual ip
-                "http://192.168.0.115:8080/sttResult" // Same here
+                Config.START_STT_URL,
+                Config.STT_RESULT_URL
         );
     }
     // Set up listeners

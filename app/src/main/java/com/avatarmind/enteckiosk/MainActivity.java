@@ -39,8 +39,8 @@ public class MainActivity extends SpeechListeningActivity {
 
         Log.d("Robot", "Sending speech signal to server...");
         startSpeechListening(
-                "http://192.168.0.115:8080/startSTT", // Replace with servers actual ip
-                "http://192.168.0.115:8080/sttResult" // Same here
+                Config.START_STT_URL,
+                Config.STT_RESULT_URL
         );
     }
 
@@ -99,28 +99,5 @@ public class MainActivity extends SpeechListeningActivity {
         if (myRobot != null) {
             myRobot.stopSpeaking();
         }
-    }
-
-    @Override
-    protected void onResume() {
-        super.onResume();
-
-        String rePropmt = "Please select or speak an option";
-        if (myRobot != null) {
-            myRobot.speak(rePropmt);
-        } else {
-            Log.e("MainActivity", "Robot instance is null, cannot deliver welcome message.");
-        }
-
-        try {
-            Thread.sleep(250);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-
-        startSpeechListening(
-                "http://192.168.0.115:8080/startSTT", // Replace with servers actual ip
-                "http://192.168.0.115:8080/sttResult" // Same here
-        );
     }
 }
