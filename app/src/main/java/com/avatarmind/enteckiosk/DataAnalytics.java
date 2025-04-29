@@ -22,7 +22,7 @@ public class DataAnalytics extends SpeechListeningActivity {
         rMotion = new RobotMotion();
 
         // Initialize buttons
-        buttonBack = (Button) findViewById(R.id.button_data_analytics);
+        buttonBack = (Button) findViewById(R.id.button_back_data_analytics);
 
         setupButtonListeners();
 
@@ -70,10 +70,16 @@ public class DataAnalytics extends SpeechListeningActivity {
 
     @Override
     protected void handleRecognizedText(String recognizedText) {
-        if (recognizedText.equalsIgnoreCase("Back")) {
+        if (recognizedText.toLowerCase().contains("back")) {
             finish();
         } else {
-            Log.d("DataAnalytics", "Unrecognized speech: " + recognizedText);
+            myRobot.speak("Sorry, I didn't understand . Please tap or speak an option");
+            try {
+                Thread.sleep(250);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            startSpeechListening(Config.START_STT_URL, Config.STT_RESULT_URL);
         }
     }
 

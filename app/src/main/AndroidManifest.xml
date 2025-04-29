@@ -45,6 +45,22 @@
         <activity android:name=".DataAnalytics"/>
         <activity android:name=".Networking"/>
         <activity android:name=".ElectricalEngineering"/>
+        <activity android:name=".AboutCampus" />
+        <activity android:name=".Admissions" />
+        <activity android:name=".AdmissionsLocation" />
+        <activity android:name=".AdvisementLocation" />
+        <activity android:name=".CampusDirectory" />
+        <activity android:name=".CampusInformation" />
+        <activity android:name=".Enrollment" />
+        <activity android:name=".Highlights" />
+        <activity android:name=".Maps" />
+        <activity android:name=".QuickLinks" />
+        <activity android:name=".Justice" />
+        <activity android:name=".Science" />
+        <activity android:name=".Design" />
+        <activity android:name=".Sculpture" />
+        <activity android:name=".ContinuingEducation"/>
+        <activity android:name=".Meek" />
     </application>
 
 </manifest>

@@ -1,13 +1,13 @@
 package com.avatarmind.enteckiosk;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.robot.motion.RobotMotion;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
-public class FinancialAid extends SpeechListeningActivity {
-
+public class AdmissionsLocation extends SpeechListeningActivity {
     private Robot myRobot;
     private RobotMotion rMotion;
     private Button buttonBack;
@@ -15,34 +15,26 @@ public class FinancialAid extends SpeechListeningActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_financial_aid);
+        setContentView(R.layout.activity_admissions_location);
 
-        //get shared robot instance
+        // Get shared robot instance
         myRobot = Robot.getInstance(this);
         rMotion = new RobotMotion();
 
         // Initialize buttons
-        buttonBack = (Button) findViewById(R.id.financial_aid_back_button);
+        buttonBack = (Button) findViewById(R.id.admissions_location_back_button);
 
         setupButtonListeners();
 
         try {
-
-            //speech performed by robot when view is opened
+            // Speech performed by robot when view is opened
             if (myRobot != null) {
-                //string that holds intro speech
-                String introText = getString(R.string.financial_aid_message);
+                String introText = "The Admissions and Registration office is located on the first floor of Building 1 at the North Campus.";
                 myRobot.speak(introText);
             }
 
-            //action performed by robot when view is opened
-            if (rMotion != null) {
-                myRobot.doAction(Robot.WAVE);
-                rMotion.emoji(RobotMotion.Emoji.SHY);
-            }
-
         } catch (Exception e) {
-            Log.e("general_questions", "Error during initial actions: " + e.getMessage());
+            Log.e("AdmissionsLocation", "Error during initial actions: " + e.getMessage());
         }
 
         try {
@@ -57,6 +49,7 @@ public class FinancialAid extends SpeechListeningActivity {
                 Config.STT_RESULT_URL
         );
     }
+
     // Set up listeners
     private void setupButtonListeners() {
         buttonBack.setOnClickListener(new View.OnClickListener() {
@@ -73,7 +66,7 @@ public class FinancialAid extends SpeechListeningActivity {
         if (recognizedText.toLowerCase().contains("back")) {
             finish();
         } else {
-            myRobot.speak("Sorry, I didn't understand . Please tap or speak an option");
+            myRobot.speak("Sorry, I didn't understand. Please tap or speak an option");
             try {
                 Thread.sleep(250);
             } catch (InterruptedException e) {
@@ -85,7 +78,6 @@ public class FinancialAid extends SpeechListeningActivity {
 
     @Override
     protected void onDestroy() {
-
         super.onDestroy();
         if (myRobot != null) {
             myRobot.stopSpeaking();

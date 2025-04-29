@@ -70,10 +70,16 @@ public class Scholarships extends SpeechListeningActivity {
 
     @Override
     protected void handleRecognizedText(String recognizedText) {
-        if (recognizedText.equalsIgnoreCase("Back")) {
+        if (recognizedText.toLowerCase().contains("back")) {
             finish();
         } else {
-            Log.d("GeneralQuestions", "Unrecognized speech: " + recognizedText);
+            myRobot.speak("Sorry, I didn't understand . Please tap or speak an option");
+            try {
+                Thread.sleep(250);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            startSpeechListening(Config.START_STT_URL, Config.STT_RESULT_URL);
         }
     }
 

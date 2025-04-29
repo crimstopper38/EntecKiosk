@@ -19,8 +19,9 @@
             android:layout_height="wrap_content"
             android:text="Back"
             android:textColor="#FFFFFF"
-            android:backgroundTint="#6200EE"
+            android:backgroundTint="#2196F3"
             android:padding="30dp"
+            android:textSize="30dp"
             android:elevation="4dp" />
     </LinearLayout>
 
@@ -54,12 +55,12 @@
             android:minHeight="200dp"
             android:text="Advisement Information"
             android:textColor="#FFFFFF"
-            android:backgroundTint="#6200EE"
+            android:backgroundTint="#2196F3"
             android:padding="20dp"
             android:elevation="4dp" />
 
         <Button
-            android:id="@+id/learning_options_button"
+            android:id="@+id/enrollment_button"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_columnWeight="1"
@@ -68,14 +69,14 @@
             android:textSize="30dp"
             android:minWidth="200dp"
             android:minHeight="200dp"
-            android:text="Learning Options"
+            android:text="Enrollment"
             android:textColor="#FFFFFF"
-            android:backgroundTint="#6200EE"
+            android:backgroundTint="#2196F3"
             android:padding="20dp"
             android:elevation="4dp" />
 
         <Button
-            android:id="@+id/scholarships_button"
+            android:id="@+id/admissions_button"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_columnWeight="1"
@@ -84,9 +85,9 @@
             android:textSize="30dp"
             android:minWidth="200dp"
             android:minHeight="200dp"
-            android:text="Scholarships"
+            android:text="Admissions"
             android:textColor="#FFFFFF"
-            android:backgroundTint="#6200EE"
+            android:backgroundTint="#2196F3"
             android:padding="20dp"
             android:elevation="4dp" />
 
@@ -102,7 +103,7 @@
             android:minHeight="200dp"
             android:text="Financial Aid"
             android:textColor="#FFFFFF"
-            android:backgroundTint="#6200EE"
+            android:backgroundTint="#2196F3"
             android:padding="20dp"
             android:elevation="4dp" />
     </GridLayout>

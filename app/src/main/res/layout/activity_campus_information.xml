@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/img2"
+    android:padding="16dp">
+
+    <!-- Campus Information Title (Centered Horizontally) -->
+    <TextView
+        android:id="@+id/text_campus_information_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="152dp"
+        android:gravity="center"
+        android:padding="8dp"
+        android:text="Campus Information"
+        android:textColor="#FFFFFF"
+        android:textSize="30sp"
+        android:textStyle="bold" />
+
+    <!-- Back Button (Top-Right) -->
+    <Button
+        android:id="@+id/campus_info_back_button"
+        android:layout_width="150dp"
+        android:layout_height="60dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_margin="8dp"
+        android:backgroundTint="#2196F3"
+        android:elevation="4dp"
+        android:padding="10dp"
+        android:text="Back"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp" />
+
+    <!-- Text Container (Centered) -->
+    <LinearLayout
+        android:id="@+id/text_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:padding="16dp">
+
+        <!-- Where It All Started -->
+        <TextView
+            android:id="@+id/text_where_it_all_started_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Where It All Started"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:textColor="#FFFFFF"
+            android:gravity="center"
+            android:layout_marginBottom="12dp"
+            android:layout_marginTop="10dp" />
+
+        <TextView
+            android:id="@+id/text_where_it_all_started_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Located on 245 acres in northern Miami-Dade County, this beautifully landscaped campus was the College's first. It was built in 1960 on land that once hosted a World War II Naval air station. The main academic buildings surround a serene lake and lush walking paths."
+            android:textSize="18sp"
+            android:textColor="#FFFFFF"
+            android:gravity="center"
+            android:padding="10dp"
+            android:layout_marginBottom="24dp" />
+
+        <!-- Ready for the Future -->
+        <TextView
+            android:id="@+id/text_ready_for_the_future_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Ready for the Future"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:textColor="#FFFFFF"
+            android:gravity="center"
+            android:layout_marginBottom="12dp"
+            android:layout_marginTop="10dp" />
+
+        <TextView
+            android:id="@+id/text_ready_for_the_future_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="In 2010, MDC opened the College's state-of-the-art science complex at North Campus. The 90,000-square-foot complex features 21 labs, a Palmetum, rooftop observatory, classrooms, lecture hall, botanical garden, greenhouse, and café."
+            android:textSize="18sp"
+            android:textColor="#FFFFFF"
+            android:gravity="center"
+            android:padding="10dp"
+            android:layout_marginBottom="16dp" />
+    </LinearLayout>
+
+    <!-- Bottom Button Container (Navigation Buttons) -->
+    <LinearLayout
+        android:id="@+id/button_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:padding="8dp">
+
+        <Button
+            android:id="@+id/about_campus_button"
+            android:layout_width="0dp"
+            android:layout_height="80dp"
+            android:layout_weight="1"
+            android:backgroundTint="#2196F3"
+            android:elevation="4dp"
+            android:padding="16dp"
+            android:text="About Campus"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp" />
+
+        <Button
+            android:id="@+id/campus_highlights_button"
+            android:layout_width="0dp"
+            android:layout_height="80dp"
+            android:layout_weight="1"
+            android:backgroundTint="#2196F3"
+            android:elevation="4dp"
+            android:padding="16dp"
+            android:text="Highlights"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp" />
+
+        <Button
+            android:id="@+id/quick_links_button"
+            android:layout_width="0dp"
+            android:layout_height="80dp"
+            android:layout_weight="1"
+            android:backgroundTint="#2196F3"
+            android:elevation="4dp"
+            android:padding="16dp"
+            android:text="Quick Links"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp" />
+
+        <Button
+            android:id="@+id/maps_directions_button"
+            android:layout_width="0dp"
+            android:layout_height="80dp"
+            android:layout_weight="1"
+            android:backgroundTint="#2196F3"
+            android:elevation="4dp"
+            android:padding="16dp"
+            android:text="Maps"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp" />
+    </LinearLayout>
+
+</RelativeLayout>

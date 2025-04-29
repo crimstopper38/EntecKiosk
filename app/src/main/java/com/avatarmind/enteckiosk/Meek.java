@@ -1,48 +1,49 @@
 package com.avatarmind.enteckiosk;
 
 import android.os.Bundle;
-import android.robot.motion.RobotMotion;
 import android.util.Log;
 import android.view.View;
+import android.webkit.WebSettings;
+import android.webkit.WebView;
+import android.webkit.WebViewClient;
 import android.widget.Button;
 
-public class FinancialAid extends SpeechListeningActivity {
-
+public class Meek extends SpeechListeningActivity {
     private Robot myRobot;
-    private RobotMotion rMotion;
+    private WebView webView;
     private Button buttonBack;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_financial_aid);
+        setContentView(R.layout.activity_meek);
 
-        //get shared robot instance
+        // Get shared robot instance
         myRobot = Robot.getInstance(this);
-        rMotion = new RobotMotion();
+
+        // Initialize WebView
+        webView = (WebView) findViewById(R.id.webview);
+        WebSettings webSettings = webView.getSettings();
+        webSettings.setJavaScriptEnabled(true);
+        webSettings.setDomStorageEnabled(true);
+        webView.setWebViewClient(new WebViewClient());
+        webView.loadUrl("https://www.mdc.edu/meek/");
 
         // Initialize buttons
-        buttonBack = (Button) findViewById(R.id.financial_aid_back_button);
+        buttonBack = (Button) findViewById(R.id.meek_back_button);
 
         setupButtonListeners();
 
         try {
-
-            //speech performed by robot when view is opened
+            // Robot introduction
             if (myRobot != null) {
-                //string that holds intro speech
-                String introText = getString(R.string.financial_aid_message);
+                String introText = "You are viewing the Meek Center information. " +
+                        "Use the back button when you're finished.";
                 myRobot.speak(introText);
             }
 
-            //action performed by robot when view is opened
-            if (rMotion != null) {
-                myRobot.doAction(Robot.WAVE);
-                rMotion.emoji(RobotMotion.Emoji.SHY);
-            }
-
         } catch (Exception e) {
-            Log.e("general_questions", "Error during initial actions: " + e.getMessage());
+            Log.e("MeekCenter", "Robot error: " + e.getMessage());
         }
 
         try {
@@ -51,13 +52,9 @@ public class FinancialAid extends SpeechListeningActivity {
             e.printStackTrace();
         }
 
-        Log.d("Robot", "Sending speech signal to server...");
-        startSpeechListening(
-                Config.START_STT_URL,
-                Config.STT_RESULT_URL
-        );
+        startSpeechListening(Config.START_STT_URL, Config.STT_RESULT_URL);
     }
-    // Set up listeners
+
     private void setupButtonListeners() {
         buttonBack.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -73,7 +70,7 @@ public class FinancialAid extends SpeechListeningActivity {
         if (recognizedText.toLowerCase().contains("back")) {
             finish();
         } else {
-            myRobot.speak("Sorry, I didn't understand . Please tap or speak an option");
+            myRobot.speak("Sorry, I didn't understand. Please tap or speak an option");
             try {
                 Thread.sleep(250);
             } catch (InterruptedException e) {
@@ -85,7 +82,6 @@ public class FinancialAid extends SpeechListeningActivity {
 
     @Override
     protected void onDestroy() {
-
         super.onDestroy();
         if (myRobot != null) {
             myRobot.stopSpeaking();

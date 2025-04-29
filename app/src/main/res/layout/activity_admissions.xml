@@ -1,0 +1,124 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:background="@drawable/main_campus">
+
+    <!-- Title -->
+    <TextView
+        android:id="@+id/text_admissions_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Admissions Information"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        android:textColor="#FFFFFF"
+        android:background="#2196F3"
+        android:gravity="center"
+        android:padding="16dp"
+        android:layout_marginTop="20dp" />
+
+    <!-- Overview -->
+    <TextView
+        android:id="@+id/text_admissions_overview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="🌟 Miami Dade College welcomes students from all backgrounds with an open-door policy.\n\n✅ Simple admissions process\n✅ Flexible enrollment options"
+        android:textSize="20sp"
+        android:textColor="#000000"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:layout_below="@id/text_admissions_title"
+        android:layout_marginTop="20dp"
+        android:padding="12dp"
+        android:background="#FFFFFF" />
+
+    <!-- Requirements -->
+    <TextView
+        android:id="@+id/text_admissions_requirements"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="📌 Admission Requirements:\n• High school diploma or GED\n• Completed application\n• Residency documents (if applicable)\n• Placement test (PERT, SAT, ACT)"
+        android:textSize="18sp"
+        android:textColor="#000000"
+        android:gravity="start"
+        android:layout_below="@id/text_admissions_overview"
+        android:layout_marginTop="12dp"
+        android:padding="12dp"
+        android:background="#FFFFFF" />
+
+    <!-- How to Apply -->
+    <TextView
+        android:id="@+id/text_how_to_apply"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="📌 How to Apply:\n1️⃣ Apply online at MDC’s website.\n2️⃣ Submit required documents.\n3️⃣ Receive MDC ID and register for classes!"
+        android:textSize="18sp"
+        android:textColor="#000000"
+        android:gravity="start"
+        android:layout_below="@id/text_admissions_requirements"
+        android:layout_marginTop="12dp"
+        android:padding="12dp"
+        android:background="#FFFFFF" />
+
+    <!-- Contact Info -->
+    <TextView
+        android:id="@+id/text_contact_info"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="📞 Contact Admissions:\n📱 Phone: 305-237-8888\n📧 Email: mdcadmissions@mdc.edu"
+        android:textSize="18sp"
+        android:textColor="#000000"
+        android:gravity="center"
+        android:layout_below="@id/text_how_to_apply"
+        android:layout_marginTop="12dp"
+        android:padding="12dp"
+        android:background="#FFFFFF" />
+
+    <!-- QR Code (now positioned above buttons) -->
+    <ImageView
+        android:id="@+id/image_qr_code"
+        android:layout_width="160dp"
+        android:layout_height="160dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/text_contact_info"
+        android:layout_marginTop="16dp"
+        android:layout_above="@id/button_container"
+        android:src="@drawable/admissions" />
+
+    <!-- Bottom Buttons -->
+    <LinearLayout
+        android:id="@+id/button_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:padding="12dp">
+
+        <Button
+            android:id="@+id/admissions_back_button"
+            android:layout_width="180dp"
+            android:layout_height="wrap_content"
+            android:text="Back"
+            android:backgroundTint="#2196F3"
+            android:textColor="#FFFFFF"
+            android:padding="12dp"
+            android:elevation="4dp"
+            android:textSize="18sp"
+            android:layout_marginEnd="10dp" />
+
+        <Button
+            android:id="@+id/find_admissions_button"
+            android:layout_width="180dp"
+            android:layout_height="wrap_content"
+            android:text="Find Location"
+            android:backgroundTint="#2196F3"
+            android:textColor="#FFFFFF"
+            android:padding="12dp"
+            android:elevation="4dp"
+            android:textSize="18sp"
+            android:layout_marginStart="10dp" />
+    </LinearLayout>
+
+</RelativeLayout>

@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:background="@drawable/img_ai">
+
+    <!-- Title -->
+    <TextView
+        android:id="@+id/text_highlights_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Campus Highlights"
+        android:textSize="40sp"
+        android:textStyle="bold"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:textColor="#000000"
+        android:background="#ffffff" />
+
+    <!-- Grid of Buttons -->
+
+    <!-- Back Button -->
+
+    <LinearLayout
+        android:id="@+id/grid_highlights_buttons"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/text_highlights_title"
+        android:layout_marginTop="101dp"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <!-- Row 1 -->
+
+        <!-- Row 2 -->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="40dp"
+            android:orientation="horizontal"
+            android:weightSum="2">
+
+            <Button
+                android:id="@+id/justice_button"
+                android:layout_width="0dp"
+                android:layout_height="115dp"
+                android:layout_marginEnd="8dp"
+                android:layout_weight="1"
+                android:backgroundTint="#2196F3"
+                android:onClick="openSchoolOfJustice"
+                android:padding="16dp"
+                android:text="School of Justice"
+                android:textColor="#FFFFFF"
+                android:textSize="28sp" />
+
+            <Button
+                android:id="@+id/science_button"
+                android:layout_width="0dp"
+                android:layout_height="115dp"
+                android:layout_marginStart="8dp"
+                android:layout_weight="1"
+                android:backgroundTint="#2196F3"
+                android:onClick="openSchoolOfScience"
+                android:padding="16dp"
+                android:text="School of Science"
+                android:textColor="#FFFFFF"
+                android:textSize="28sp" />
+        </LinearLayout>
+
+        <!-- Row 2 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2"
+            android:layout_marginBottom="40dp">
+
+            <Button
+                android:id="@+id/entertainment_button"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="8dp"
+                android:layout_weight="1"
+                android:backgroundTint="#2196F3"
+                android:onClick="openSchoolOfEntertainment"
+                android:padding="16dp"
+                android:text="Entertainment and Design"
+                android:textColor="#FFFFFF"
+                android:textSize="28sp" />
+
+            <Button
+                android:id="@+id/sculpture_button"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="8dp"
+                android:layout_weight="1"
+                android:backgroundTint="#2196F3"
+                android:onClick="openSculpturePark"
+                android:padding="16dp"
+                android:text="Sculpture Park"
+                android:textColor="#FFFFFF"
+                android:textSize="28sp" />
+        </LinearLayout>
+
+        <!-- Row 3 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2"
+            android:layout_marginBottom="40dp">
+
+            <Button
+                android:id="@+id/continuing_education_button"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="8dp"
+                android:layout_weight="1"
+                android:backgroundTint="#2196F3"
+                android:onClick="openContinuingEducation"
+                android:padding="16dp"
+                android:text="Continuing Education"
+                android:textColor="#FFFFFF"
+                android:textSize="28sp" />
+
+            <Button
+                android:id="@+id/meek_button"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="8dp"
+                android:layout_weight="1"
+                android:backgroundTint="#2196F3"
+                android:onClick="openMeekCenter"
+                android:padding="16dp"
+                android:text="Meek Center"
+                android:textColor="#FFFFFF"
+                android:textSize="28sp" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/highlights_back_button"
+        android:layout_width="192dp"
+        android:layout_height="83dp"
+        android:layout_below="@id/grid_highlights_buttons"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="8dp"
+        android:backgroundTint="#2196F3"
+        android:elevation="4dp"
+        android:padding="16dp"
+        android:text="Back"
+        android:textColor="#FFFFFF"
+        android:textSize="28sp" />
+</RelativeLayout>

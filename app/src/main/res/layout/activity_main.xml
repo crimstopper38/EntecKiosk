@@ -51,12 +51,12 @@
             android:layout_marginBottom="16dp" />
 
         <Button
-            android:id="@+id/STEM_programs_button"
+            android:id="@+id/campus_info_button"
             android:layout_width="500dp"
             android:layout_height="wrap_content"
-            android:text="STEM Bachelor Program Information"
+            android:text="Campus Information"
             android:padding="25dp"
-            android:textSize="25dp"
+            android:textSize="30dp"
             android:backgroundTint="#2196F3"
             android:textColor="#FFFFFF"
             android:elevation="4dp" />

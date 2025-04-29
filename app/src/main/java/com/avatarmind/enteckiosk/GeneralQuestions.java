@@ -12,8 +12,8 @@ public class GeneralQuestions extends SpeechListeningActivity {
     private RobotMotion rMotion;
     private Button buttonBack;
     private Button buttonAdvisement;
-    private Button buttonLearningOptions;
-    private Button buttonScholarships;
+    private Button buttonAdmissions;
+    private Button buttonEnrollment;
     private Button buttonFinancialAid;
 
 
@@ -29,8 +29,8 @@ public class GeneralQuestions extends SpeechListeningActivity {
         // Initialize buttons
         buttonBack = (Button) findViewById(R.id.back_button);
         buttonAdvisement = (Button) findViewById(R.id.advisement_info_button);
-        buttonLearningOptions = (Button) findViewById(R.id.learning_options_button);
-        buttonScholarships = (Button) findViewById(R.id.scholarships_button);
+        buttonEnrollment = (Button) findViewById(R.id.enrollment_button);
+        buttonAdmissions = (Button) findViewById(R.id.admissions_button);
         buttonFinancialAid = (Button) findViewById(R.id.financial_aid_button);
 
         setupButtonListeners();
@@ -85,20 +85,20 @@ public class GeneralQuestions extends SpeechListeningActivity {
             }
         });
 
-        buttonLearningOptions.setOnClickListener(new View.OnClickListener() {
+        buttonEnrollment.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 myRobot.stopSpeaking();
-                Intent intent = new Intent(GeneralQuestions.this, LearningOptions.class);
+                Intent intent = new Intent(GeneralQuestions.this, Enrollment.class);
                 startActivity(intent);
             }
         });
 
-        buttonScholarships.setOnClickListener(new View.OnClickListener() {
+        buttonAdmissions.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 myRobot.stopSpeaking();
-                Intent intent = new Intent(GeneralQuestions.this, Scholarships.class);
+                Intent intent = new Intent(GeneralQuestions.this, Admissions.class);
                 startActivity(intent);
             }
         });
@@ -115,18 +115,24 @@ public class GeneralQuestions extends SpeechListeningActivity {
 
     @Override
     protected void handleRecognizedText(String recognizedText) {
-        if (recognizedText.equalsIgnoreCase("Advisement Information")) {
+        if (recognizedText.toLowerCase().contains("advisement") || recognizedText.toLowerCase().contains("information")) {
             openActivity(AdvisementInformation.class);
-        } else if (recognizedText.equalsIgnoreCase("Learning Options")) {
-            openActivity(LearningOptions.class);
-        } else if (recognizedText.equalsIgnoreCase("Scholarships")) {
-            openActivity(Scholarships.class);
-        } else if (recognizedText.equalsIgnoreCase("Financial Aid")) {
+        } else if (recognizedText.toLowerCase().contains("enrollment")) {
+            openActivity(Enrollment.class);
+        } else if (recognizedText.toLowerCase().contains("admissions")) {
+            openActivity(Admissions.class);
+        } else if (recognizedText.toLowerCase().contains("financial") || recognizedText.toLowerCase().contains("aid")) {
             openActivity(FinancialAid.class);
-        } else if (recognizedText.equalsIgnoreCase("Back")) {
+        } else if (recognizedText.toLowerCase().contains("back")) {
             finish();
         } else {
-            Log.d("GeneralQuestions", "Unrecognized speech: " + recognizedText);
+            myRobot.speak("Sorry, I didn't understand . Please tap or speak an option");
+            try {
+                Thread.sleep(250);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            startSpeechListening(Config.START_STT_URL, Config.STT_RESULT_URL);
         }
     }
 

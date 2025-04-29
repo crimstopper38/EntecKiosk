@@ -147,22 +147,28 @@ public class StemPrograms extends SpeechListeningActivity {
 
     @Override
     protected void handleRecognizedText(String recognizedText) {
-        if (recognizedText.equalsIgnoreCase("Back")) {
+        if (recognizedText.toLowerCase().contains("back")) {
             finish();
-        } else if (recognizedText.equalsIgnoreCase("Artificial Intelligence")) {
+        } else if (recognizedText.toLowerCase().contains("artificial") || recognizedText.toLowerCase().contains("intelligence")) {
             openActivity(ArtificialIntelligence.class);
-        } else if (recognizedText.equalsIgnoreCase("Software Engineering")) {
+        } else if (recognizedText.toLowerCase().contains("software") || recognizedText.toLowerCase().contains("development")) {
             openActivity(SoftwareEngineering.class);
-        } else if (recognizedText.equalsIgnoreCase("Data Analytics")) {
+        } else if (recognizedText.toLowerCase().contains("data") || recognizedText.toLowerCase().contains("analytics")) {
             openActivity(DataAnalytics.class);
-        } else if (recognizedText.equalsIgnoreCase("Cyber Security")) {
+        } else if (recognizedText.toLowerCase().contains("cyber") || recognizedText.toLowerCase().contains("security")) {
             openActivity(CyberSecurity.class);
-        } else if (recognizedText.equalsIgnoreCase("Networking")) {
+        } else if (recognizedText.toLowerCase().contains("networking")) {
             openActivity(Networking.class);
-        } else if (recognizedText.equalsIgnoreCase("Electrical Engineering")) {
+        } else if (recognizedText.toLowerCase().contains("electrical") || recognizedText.toLowerCase().contains("engineering")) {
             openActivity(ElectricalEngineering.class);
         } else {
-            Log.d("StemPrograms", "Unrecognized speech: " + recognizedText);
+            myRobot.speak("Sorry, I didn't understand . Please tap or speak an option");
+            try {
+                Thread.sleep(250);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            startSpeechListening(Config.START_STT_URL, Config.STT_RESULT_URL);
         }
     }
 

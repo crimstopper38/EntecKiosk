@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:background="@drawable/img_ai">
+
+    <!-- Back Button (Now on the Right) -->
+    <Button
+        android:id="@+id/button_back"
+        android:layout_width="150dp"
+        android:layout_height="60dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_margin="8dp"
+        android:backgroundTint="#2196F3"
+        android:elevation="4dp"
+        android:padding="10dp"
+        android:text="Back"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp" />
+
+    <!-- Title (Bigger & Centered) -->
+    <TextView
+        android:id="@+id/text_About_Our_Campus_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/button_back"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:background="#ffffff"
+        android:padding="8dp"
+        android:text="Miami Dade College: North Campus"
+        android:textColor="#2196F3"
+        android:textSize="32sp"
+        android:textStyle="bold" />
+
+    <!-- Button Layout (Centered) -->
+    <LinearLayout
+        android:id="@+id/centered_buttons"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:padding="16dp">
+
+
+        <Button
+            android:id="@+id/campus_admin_button"
+            android:layout_width="match_parent"
+            android:layout_height="90dp"
+            android:layout_marginBottom="16dp"
+            android:backgroundTint="#2196F3"
+            android:elevation="4dp"
+            android:padding="16dp"
+            android:text="Campus Administration"
+            android:textColor="#FFFFFF"
+            android:textSize="24sp" />
+
+        <Button
+            android:id="@+id/entec_programs_button"
+            android:layout_width="match_parent"
+            android:layout_height="90dp"
+            android:backgroundTint="#2196F3"
+            android:elevation="4dp"
+            android:padding="16dp"
+            android:text="EnTec Programs"
+            android:textColor="#FFFFFF"
+            android:textSize="24sp" />
+
+    </LinearLayout>
+
+</RelativeLayout>

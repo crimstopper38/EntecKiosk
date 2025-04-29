@@ -2,18 +2,12 @@ package com.avatarmind.enteckiosk;
 
 import org.junit.Before;
 import org.junit.Test;
-import org.mockito.ArgumentCaptor;
-
-import java.io.OutputStream;
-import java.net.HttpURLConnection;
-import java.net.URL;
+;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.TimeUnit;
 
 import static org.junit.Assert.*;
 import static org.mockito.Mockito.*;
-
-import org.json.JSONObject;
 
 public class SpeechTriggerManagerTest {
 

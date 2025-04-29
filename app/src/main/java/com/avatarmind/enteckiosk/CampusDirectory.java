@@ -1,13 +1,15 @@
 package com.avatarmind.enteckiosk;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.robot.motion.RobotMotion;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
-public class FinancialAid extends SpeechListeningActivity {
-
+public class CampusDirectory extends SpeechListeningActivity {
     private Robot myRobot;
     private RobotMotion rMotion;
     private Button buttonBack;
@@ -15,34 +17,28 @@ public class FinancialAid extends SpeechListeningActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_financial_aid);
+        setContentView(R.layout.activity_campus_directory);
 
-        //get shared robot instance
+        // Get shared robot instance
         myRobot = Robot.getInstance(this);
         rMotion = new RobotMotion();
 
         // Initialize buttons
-        buttonBack = (Button) findViewById(R.id.financial_aid_back_button);
+        buttonBack = (Button) findViewById(R.id.directory_back_button);
 
         setupButtonListeners();
 
         try {
-
-            //speech performed by robot when view is opened
+            // Speech performed by robot when view is opened
             if (myRobot != null) {
-                //string that holds intro speech
-                String introText = getString(R.string.financial_aid_message);
+                String introText = "Welcome to the Miami Dade College Campus Directory. " +
+                        "Here you can find contact information for various departments. " +
+                        "Tap on any department to visit its webpage for more details.";
                 myRobot.speak(introText);
             }
 
-            //action performed by robot when view is opened
-            if (rMotion != null) {
-                myRobot.doAction(Robot.WAVE);
-                rMotion.emoji(RobotMotion.Emoji.SHY);
-            }
-
         } catch (Exception e) {
-            Log.e("general_questions", "Error during initial actions: " + e.getMessage());
+            Log.e("CampusDirectory", "Error during initial actions: " + e.getMessage());
         }
 
         try {
@@ -57,7 +53,7 @@ public class FinancialAid extends SpeechListeningActivity {
                 Config.STT_RESULT_URL
         );
     }
-    // Set up listeners
+
     private void setupButtonListeners() {
         buttonBack.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -70,10 +66,10 @@ public class FinancialAid extends SpeechListeningActivity {
 
     @Override
     protected void handleRecognizedText(String recognizedText) {
-        if (recognizedText.toLowerCase().contains("back")) {
+        if (recognizedText.toLowerCase().contains("back") || recognizedText.toLowerCase().contains("return")) {
             finish();
         } else {
-            myRobot.speak("Sorry, I didn't understand . Please tap or speak an option");
+            myRobot.speak("Sorry, I didn't understand. Please tap or speak a department name");
             try {
                 Thread.sleep(250);
             } catch (InterruptedException e) {
@@ -85,7 +81,6 @@ public class FinancialAid extends SpeechListeningActivity {
 
     @Override
     protected void onDestroy() {
-
         super.onDestroy();
         if (myRobot != null) {
             myRobot.stopSpeaking();

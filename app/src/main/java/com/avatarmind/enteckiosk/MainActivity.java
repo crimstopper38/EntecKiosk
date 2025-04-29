@@ -9,7 +9,7 @@ public class MainActivity extends SpeechListeningActivity {
 
     private Robot myRobot;
     private Button generalQuestionsButton;
-    private Button stemProgramsButton;
+    private Button campusInfoButton;
     private Button exitButton;
 
     @Override
@@ -21,7 +21,7 @@ public class MainActivity extends SpeechListeningActivity {
 
         // Initialize buttons
         generalQuestionsButton = (Button) findViewById(R.id.general_questions_button);
-        stemProgramsButton = (Button) findViewById(R.id.STEM_programs_button);
+        campusInfoButton = (Button) findViewById(R.id.campus_info_button);
         exitButton = (Button) findViewById(R.id.exit_button);
 
         // Set up button listeners
@@ -55,11 +55,11 @@ public class MainActivity extends SpeechListeningActivity {
         });
 
         // STEM Programs Button
-        stemProgramsButton.setOnClickListener(new View.OnClickListener() {
+        campusInfoButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 myRobot.stopSpeaking();
-                openActivity(StemPrograms.class);
+                openActivity(CampusInformation.class);
             }
         });
 
@@ -84,12 +84,20 @@ public class MainActivity extends SpeechListeningActivity {
 
     @Override
     protected void handleRecognizedText(String recognizedText) {
-        if (recognizedText.equalsIgnoreCase("General Questions")) {
+        if (recognizedText.toLowerCase().contains("general") || recognizedText.toLowerCase().contains("questions")) {
             openActivity(GeneralQuestions.class);
-        } else if (recognizedText.equalsIgnoreCase("Programs")) {
-            openActivity(StemPrograms.class);
+        } else if (recognizedText.toLowerCase().contains("campus") || recognizedText.toLowerCase().contains("information"))  {
+            openActivity(CampusInformation.class);
+        } else if (recognizedText.toLowerCase().contains("exit")) {
+            finishAffinity();
         } else {
-            Log.d("MainActivity", "Unrecognized speech: " + recognizedText);
+            myRobot.speak("Sorry, I didn't understand. Please tap or speak an option");
+            try {
+                Thread.sleep(250);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            startSpeechListening(Config.START_STT_URL, Config.STT_RESULT_URL);
         }
     }
 

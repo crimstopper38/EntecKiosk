@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:background="@drawable/main_campus">
+
+    <!-- Title -->
+    <TextView
+        android:id="@+id/text_directory_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Campus Directory"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:textColor="#000000"
+        android:background="#ffffff" />
+
+    <!-- Scrollable Directory -->
+    <ScrollView
+        android:id="@+id/scroll_directory_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/text_directory_title"
+        android:layout_above="@id/directory_back_button"
+        android:layout_marginTop="16dp"
+        android:background="#FFFFFF">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="8dp">
+
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:stretchColumns="*">
+
+                <!-- Header -->
+                <TableRow>
+                    <TextView android:text="Department" android:textStyle="bold" android:padding="8dp" android:textSize="18sp" />
+                    <TextView android:text="Phone Number" android:textStyle="bold" android:padding="8dp" android:textSize="18sp" />
+                    <TextView android:text="Location" android:textStyle="bold" android:padding="8dp" android:textSize="18sp" />
+                </TableRow>
+
+                <!-- Directory Rows -->
+                <TableRow>
+                    <TextView android:text="General Campus Info" android:textColor="#2196F3" android:padding="8dp" />
+                    <TextView android:text="305-237-1000" android:autoLink="phone" android:padding="8dp" />
+                    <TextView android:text="-" android:padding="8dp" />
+                </TableRow>
+
+                <TableRow>
+                    <TextView android:text="Academic Affairs Office" android:textColor="#2196F3" android:padding="8dp" />
+                    <TextView android:text="305-237-1130" android:autoLink="phone" android:padding="8dp" />
+                    <TextView android:text="Room 1312" android:padding="8dp" />
+                </TableRow>
+
+                <TableRow>
+                    <TextView android:text="Admissions and Registration" android:textColor="#2196F3" android:padding="8dp" />
+                    <TextView android:text="305-237-9100" android:autoLink="phone" android:padding="8dp" />
+                    <TextView android:text="Room 1123" android:padding="8dp" />
+                </TableRow>
+
+                <TableRow>
+                    <TextView android:text="Advisement and Career Services" android:textColor="#2196F3" android:padding="8dp" />
+                    <TextView android:text="305-237-1425" android:autoLink="phone" android:padding="8dp" />
+                    <TextView android:text="Room 1104" android:padding="8dp" />
+                </TableRow>
+
+                <TableRow>
+                    <TextView android:text="Financial Aid Office" android:textColor="#2196F3" android:padding="8dp" />
+                    <TextView android:text="305-237-9300" android:autoLink="phone" android:padding="8dp" />
+                    <TextView android:text="Room 1119" android:padding="8dp" />
+                </TableRow>
+
+                <TableRow>
+                    <TextView android:text="Testing Services" android:textColor="#2196F3" android:padding="8dp" />
+                    <TextView android:text="305-237-1015" android:autoLink="phone" android:padding="8dp" />
+                    <TextView android:text="Room 1160" android:padding="8dp" />
+                </TableRow>
+
+                <TableRow>
+                    <TextView android:text="Disability Services" android:textColor="#2196F3" android:padding="8dp" />
+                    <TextView android:text="305-237-1272" android:autoLink="phone" android:padding="8dp" />
+                    <TextView android:text="Room 6112" android:padding="8dp" />
+                </TableRow>
+
+                <TableRow>
+                    <TextView android:text="Veteran and Military Services" android:textColor="#2196F3" android:padding="8dp" />
+                    <TextView android:text="305-237-1505" android:autoLink="phone" android:padding="8dp" />
+                    <TextView android:text="Room 6110" android:padding="8dp" />
+                </TableRow>
+
+                <TableRow>
+                    <TextView android:text="Student Life" android:textColor="#2196F3" android:padding="8dp" />
+                    <TextView android:text="305-237-1250" android:autoLink="phone" android:padding="8dp" />
+                    <TextView android:text="Room 4208" android:padding="8dp" />
+                </TableRow>
+
+                <TableRow>
+                    <TextView android:text="Library Services" android:textColor="#2196F3" android:padding="8dp" />
+                    <TextView android:text="305-237-1142" android:autoLink="phone" android:padding="8dp" />
+                    <TextView android:text="Building 2" android:padding="8dp" />
+                </TableRow>
+
+                <TableRow>
+                    <TextView android:text="Aquatic and Fitness Center" android:textColor="#2196F3" android:padding="8dp"/>
+                    <TextView android:text="305-237-1129" android:autoLink="phone" android:padding="8dp"/>
+                    <TextView android:text="Building 500" android:padding="8dp"/>
+                </TableRow>
+
+                <TableRow>
+                    <TextView android:text="Architecture" android:textColor="#2196F3" android:padding="8dp"/>
+                    <TextView android:text="305-237-1169" android:autoLink="phone" android:padding="8dp"/>
+                    <TextView android:text="Room 1256" android:padding="8dp"/>
+                </TableRow>
+
+                <TableRow>
+                    <TextView android:text="Arts and Philosophy" android:textColor="#2196F3" android:padding="8dp"/>
+                    <TextView android:text="305-237-1450" android:autoLink="phone" android:padding="8dp"/>
+                    <TextView android:text="Room 5226" android:padding="8dp"/>
+                </TableRow>
+
+                <TableRow>
+                    <TextView android:text="Biology/Wellness" android:textColor="#2196F3" android:padding="8dp"/>
+                    <TextView android:text="305-237-1101" android:autoLink="phone" android:padding="8dp"/>
+                    <TextView android:text="Room A325" android:padding="8dp"/>
+                </TableRow>
+
+                <TableRow>
+                    <TextView android:text="Bookstore" android:textColor="#2196F3" android:padding="8dp"/>
+                    <TextView android:text="305-237-1247" android:autoLink="phone" android:padding="8dp"/>
+                    <TextView android:text="Building 4, First Floor" android:padding="8dp"/>
+                </TableRow>
+
+                <TableRow>
+                    <TextView android:text="Bursar's Office" android:textColor="#2196F3" android:padding="8dp"/>
+                    <TextView android:text="305-237-9310" android:autoLink="phone" android:padding="8dp"/>
+                    <TextView android:text="Room 1154" android:padding="8dp"/>
+                </TableRow>
+
+                <TableRow>
+                    <TextView android:text="Campus Administration Office" android:textColor="#2196F3" android:padding="8dp"/>
+                    <TextView android:text="305-237-1141" android:autoLink="phone" android:padding="8dp"/>
+                    <TextView android:text="Room 1315" android:padding="8dp"/>
+                </TableRow>
+
+                <TableRow>
+                    <TextView android:text="Campus Chief Information Officer" android:textColor="#2196F3" android:padding="8dp"/>
+                    <TextView android:text="305-237-1201" android:autoLink="phone" android:padding="8dp"/>
+                    <TextView android:text="Room 2258" android:padding="8dp"/>
+                </TableRow>
+
+                <TableRow>
+                    <TextView android:text="Campus President's Office" android:textColor="#2196F3" android:padding="8dp"/>
+                    <TextView android:text="305-237-1152" android:autoLink="phone" android:padding="8dp"/>
+                    <TextView android:text="Room 1322" android:padding="8dp"/>
+                </TableRow>
+
+                <TableRow>
+                    <TextView android:text="Campus Services" android:textColor="#2196F3" android:padding="8dp"/>
+                    <TextView android:text="305-237-1003" android:autoLink="phone" android:padding="8dp"/>
+                    <TextView android:text="Room 1156" android:padding="8dp"/>
+                </TableRow>
+
+                <TableRow>
+                    <TextView android:text="College Prep" android:textColor="#2196F3" android:padding="8dp"/>
+                    <TextView android:text="305-237-1269" android:autoLink="phone" android:padding="8dp"/>
+                    <TextView android:text="Room 6106" android:padding="8dp"/>
+                </TableRow>
+
+                <TableRow>
+                    <TextView android:text="Continuing Ed and Prof Development" android:textColor="#2196F3" android:padding="8dp"/>
+                    <TextView android:text="305-237-1019" android:autoLink="phone" android:padding="8dp"/>
+                    <TextView android:text="Room 1267" android:padding="8dp"/>
+                </TableRow>
+
+                <TableRow>
+                    <TextView android:text="Computer Courtyard" android:textColor="#2196F3" android:padding="8dp"/>
+                    <TextView android:text="305-237-1800" android:autoLink="phone" android:padding="8dp"/>
+                    <TextView android:text="Room 2102/2201" android:padding="8dp"/>
+                </TableRow>
+
+                <TableRow>
+                    <TextView android:text="College Training and Development" android:textColor="#2196F3" android:padding="8dp"/>
+                    <TextView android:text="305-237-1698" android:autoLink="phone" android:padding="8dp"/>
+                    <TextView android:text="Room 2260" android:padding="8dp"/>
+                </TableRow>
+
+                <TableRow>
+                    <TextView android:text="Dean of Students Office" android:textColor="#2196F3" android:padding="8dp"/>
+                    <TextView android:text="305-237-1053" android:autoLink="phone" android:padding="8dp"/>
+                    <TextView android:text="Room 1323" android:padding="8dp"/>
+                </TableRow>
+
+                <TableRow>
+                    <TextView android:text="Duplicating and Mail Center" android:textColor="#2196F3" android:padding="8dp"/>
+                    <TextView android:text="305-237-1493" android:autoLink="phone" android:padding="8dp"/>
+                    <TextView android:text="Room 3103" android:padding="8dp"/>
+                </TableRow>
+
+                <TableRow>
+                    <TextView android:text="Earth Ethics Institute" android:textColor="#2196F3" android:padding="8dp"/>
+                    <TextView android:text="305-237-1338" android:autoLink="phone" android:padding="8dp"/>
+                    <TextView android:text="Room 1256" android:padding="8dp"/>
+                </TableRow>
+
+                <TableRow>
+                    <TextView android:text="English and Communications" android:textColor="#2196F3" android:padding="8dp"/>
+                    <TextView android:text="305-237-1300" android:autoLink="phone" android:padding="8dp"/>
+                    <TextView android:text="Room 7323" android:padding="8dp"/>
+                </TableRow>
+
+                <TableRow>
+                    <TextView android:text="Exploration Station Preschool Lab" android:textColor="#2196F3" android:padding="8dp"/>
+                    <TextView android:text="305-237-1357" android:autoLink="phone" android:padding="8dp"/>
+                    <TextView android:text="Building 600" android:padding="8dp"/>
+                </TableRow>
+
+                <TableRow>
+                    <TextView android:text="Facilities Rental and Reservation" android:textColor="#2196F3" android:padding="8dp"/>
+                    <TextView android:text="305-237-1141" android:autoLink="phone" android:padding="8dp"/>
+                    <TextView android:text="Room 1315" android:padding="8dp"/>
+                </TableRow>
+
+                <TableRow>
+                    <TextView android:text="Fire Science" android:textColor="#2196F3" android:padding="8dp"/>
+                    <TextView android:text="305-237-3473" android:autoLink="phone" android:padding="8dp"/>
+                    <TextView android:text="Room 101" android:padding="8dp"/>
+                </TableRow>
+
+                <TableRow>
+                    <TextView android:text="Funeral Service Education" android:textColor="#2196F3" android:padding="8dp"/>
+                    <TextView android:text="305-237-1244" android:autoLink="phone" android:padding="8dp"/>
+                    <TextView android:text="Room 3142" android:padding="8dp"/>
+                </TableRow>
+
+                <TableRow>
+                    <TextView android:text="Honors College" android:textColor="#2196F3" android:padding="8dp"/>
+                    <TextView android:text="305-237-1106" android:autoLink="phone" android:padding="8dp"/>
+                    <TextView android:text="Room 1373" android:padding="8dp"/>
+                </TableRow>
+
+            </TableLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- Back Button -->
+    <Button
+        android:id="@+id/directory_back_button"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:text="Back"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:backgroundTint="#2196F3"
+        android:textColor="#FFFFFF"
+        android:padding="16dp"
+        android:elevation="4dp" />
+</RelativeLayout>
